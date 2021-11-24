@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "spring.cloud.stream.function.definition",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.function.definition'"
+  },
+  {
+    "name": "spring.cloud.stream.bindings.orderBuySupplier-out-0.destination",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.bindings.orderBuySupplier-out-0.destination'"
+  },
+  {
+    "name": "spring.cloud.stream.kafka.bindings.orderBuySupplier-out-0.producer.configuration.key.serializer",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.kafka.bindings.orderBuySupplier-out-0.producer.configuration.key.serializer'"
+  },
+  {
+    "name": "spring.cloud.stream.bindings.orderSellSupplier-out-0.destination",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.bindings.orderSellSupplier-out-0.destination'"
+  },
+  {
+    "name": "spring.cloud.stream.kafka.bindings.orderSellSupplier-out-0.producer.configuration.key.serializer",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.cloud.stream.kafka.bindings.orderSellSupplier-out-0.producer.configuration.key.serializer'"
+  }
+]}

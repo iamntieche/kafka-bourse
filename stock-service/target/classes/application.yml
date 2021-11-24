@@ -1,0 +1,29 @@
+spring.application.name: stock-service
+
+spring.kafka.bootstrap-servers: ${KAFKA_URL}
+
+spring.cloud.stream.function.definition: orders;transactions;total;totalPerProduct;latestPerProduct
+
+spring.cloud.stream.bindings.orders-in-0.destination: orders.buy
+spring.cloud.stream.bindings.orders-in-1.destination: orders.sell
+spring.cloud.stream.kafka.streams.binder.functions.orders.applicationId: orders
+
+spring.cloud.stream.bindings.transactions-in-0.destination: orders.buy
+spring.cloud.stream.bindings.transactions-in-1.destination: orders.sell
+spring.cloud.stream.bindings.transactions-out-0.destination: transactions
+spring.cloud.stream.kafka.streams.binder.functions.transactions.applicationId: transactions
+
+spring.cloud.stream.bindings.total-in-0.destination: transactions
+spring.cloud.stream.kafka.streams.binder.functions.total.applicationId: total
+
+spring.cloud.stream.bindings.totalPerProduct-in-0.destination: transactions
+spring.cloud.stream.bindings.totalPerProduct-in-1.destination: orders.sell
+spring.cloud.stream.kafka.streams.binder.functions.totalPerProduct.applicationId: totalPerProduct
+
+spring.cloud.stream.bindings.latestPerProduct-in-0.destination: transactions
+spring.cloud.stream.bindings.latestPerProduct-in-1.destination: orders.sell
+spring.cloud.stream.kafka.streams.binder.functions.latestPerProduct.applicationId: latestPerProduct
+
+spring.output.ansi.enabled: ALWAYS
+logging.pattern.console: "%clr(%d{HH:mm:ss.SSS}){blue} %clr(---){faint} %clr([%15.15t]){yellow} %clr(:){red} %clr(%m){faint}%n"
+management.endpoints.web.exposure.include: "*"
