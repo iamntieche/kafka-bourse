@@ -1,5 +1,5 @@
 spring.application.name: order-service
-
+server.port: 8090
 spring.kafka.bootstrap-servers: localhost:9092
 spring.cloud.stream.function.definition: orderBuySupplier;orderSellSupplier
 

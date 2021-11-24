@@ -1,7 +1,6 @@
 spring.application.name: stock-service
-
-spring.kafka.bootstrap-servers: ${KAFKA_URL}
-
+server.port: 8091
+spring.kafka.bootstrap-servers: localhost:9092
 spring.cloud.stream.function.definition: orders;transactions;total;totalPerProduct;latestPerProduct
 
 spring.cloud.stream.bindings.orders-in-0.destination: orders.buy
